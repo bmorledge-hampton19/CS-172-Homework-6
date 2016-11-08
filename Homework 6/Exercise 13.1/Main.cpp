@@ -22,7 +22,7 @@ int main() {
 	fstream inout;
 
 	// Open a file in order to append to its current contents.
-	inout.open("Exercise13_1.txt", ios::out, ios::app);
+	inout.open("Exercise13_1.txt", ios::out | ios::app);
 
 	// Make sure the file was opened successfully.
 	if (inout.fail()) {
@@ -46,7 +46,7 @@ int main() {
 
 
 	// If everything worked out, make note of it!
-	cout << "Everything seems to have gone alright!";
+	cout << "Everything seems to have gone alright!" << endl;
 
 	// End function.  Everything is ok!
 	return 0;
