@@ -22,7 +22,7 @@ int main() {
 	string filename; // The filename provided by the user.
 
 	// Have the user provide a filename.
-	cout << "Gimme a file name!";
+	cout << "Gimme a file name! ";
 	getline(cin,filename);
 
 	// Attempt to open the file with the given name.
@@ -42,8 +42,8 @@ int main() {
 
 			// Read one character and move on to the next.
 			input.get();
-			// Increment the character counter.
-			charCount++;
+			// Increment the character counter if the end of the file has not been reached.
+			if (!input.eof()) charCount++;
 
 		}
 
