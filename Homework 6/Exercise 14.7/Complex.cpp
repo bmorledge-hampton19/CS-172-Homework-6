@@ -124,7 +124,7 @@ string Complex::toString() const
 		complexString = aString.str(); // Create the string.
 	}
 	else {
-		complexString = "(" + aString.str() + " + " + bString.str() + "i )"; // Create the string.
+		complexString = "(" + aString.str() + " + " + bString.str() + "i)"; // Create the string.
 	}
 	return complexString;
 }
