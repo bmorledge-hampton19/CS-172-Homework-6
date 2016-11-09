@@ -11,25 +11,22 @@
 #include <string>
 using namespace std;
 
-// A function to extract and return only the phrase at position [pos] in a string of phrases seperated by various amounts of whitespace. (The first phrase is position 0)
+// A function to extract and return only the phrase at position [pos] in a string of phrases seperated by the escape character \t. (The first phrase is position 0)
 string findPhrase(int pos, string phrases) {
-
-	int whitespaceSearching; // A variable that finds the first non-whitespace character after the first region of whitespace.
 
 	// Truncate the string by the number of phrases designated by pos.
 	for (int i = 0; i < pos; i++) {
-
-		// Find the end of the current region of whitespace by starting whitespaceSearching at the first whitespace character, and incrementing it until it reaches a non-whitespace character.
-		for (whitespaceSearching = phrases.find(' '); phrases.at(whitespaceSearching) == ' '; whitespaceSearching++);
 		
-		// Erase the characters up until the point indicated by whitespaceSearching.
-		phrases.erase(0, whitespaceSearching);
+		// Erase the characters up until the point indicated by the location for the closest tab.
+		phrases.erase(0, phrases.find('\t')+1);
 
 	}
 
 	// Truncate the end of the string so that all that is left is the desired phrase.
 	// Find the first bit of whitespace, and cut everything in front of it off.
-	phrases.erase(phrases.find(' '), phrases.size() - phrases.find(' '));
+	phrases.erase(phrases.find('\t'), phrases.size() - phrases.find('\t'));
+
+	return phrases;
 
 }
 
@@ -63,7 +60,7 @@ int main() {
 		cin >> gender;
 	}
 
-	cout << "What is the name? ";
+	cout << "What is the name (capitalize first letter)? ";
 	cin >> name;
 
 	// Create the filename based on the year given.
@@ -90,10 +87,10 @@ int main() {
 
 		// Based on the gender given, modify the line with the findPhrase function to return the desired name.
 		if (tolower(gender) == 'm') {
-			modifiedLine = findPhrase(2, line);
+			modifiedLine = findPhrase(1, line);
 		}
 		else if (tolower(gender) == 'f') {
-			modifiedLine = findPhrase(4, line);
+			modifiedLine = findPhrase(3, line);
 		}
 
 		// Check the derived name against the user-given name.  If they match, display the rank number and exit the loop.
