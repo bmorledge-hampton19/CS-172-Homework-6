@@ -27,7 +27,9 @@ public:
 	Complex multiply(Complex c) const;
 	Complex divide(Complex c) const;
 
-	Complex abs(); // Return the absolute value of a complex number.
+	double abs(); // Return the absolute value of a complex number.
+
+	string toString() const; // Returns the complex number as a string.
 
 	//Overloading ALL the operators!!!!!
 	
@@ -38,7 +40,7 @@ public:
 	void operator/=(Complex c);
 
 	// Operator overloading that returns a for [0] and b for [1]
-	int& operator[](int index);
+	double& operator[](int index);
 
 	// Unary operator overloading for complex numbers.
 	Complex operator+(); // Changes nothing before returning.
