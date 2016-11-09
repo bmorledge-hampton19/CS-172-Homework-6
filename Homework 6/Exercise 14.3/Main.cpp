@@ -31,8 +31,8 @@ int main() {
 
 	cout << "Circle 1 > Circle 2: " << (*circle1 > circle2) << endl;
 	cout << "Circle 1 >= Circle 2: " << (*circle1 >= circle2) << endl;
-	cout << "Circle 1 == Circle 2: " << (*circle1 != circle2) << endl;
-	cout << "Circle 1 != Circle 2: " << (*circle1 == circle2) << endl;
+	cout << "Circle 1 == Circle 2: " << (*circle1 == circle2) << endl;
+	cout << "Circle 1 != Circle 2: " << (*circle1 != circle2) << endl;
 	cout << "Circle 1 < Circle 2: " << (*circle1 < circle2) << endl;
 	cout << "Circle 1 <= Circle 2: " << (*circle1 <= circle2) << endl << endl;
 
