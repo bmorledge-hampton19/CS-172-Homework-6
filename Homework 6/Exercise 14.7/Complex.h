@@ -3,13 +3,6 @@
 #include <fstream>
 using namespace std;
 
-// Overloaded arithmetic operators that are non-member functions that act like the arithmetic member functions.
-Complex operator+(const Complex& c1, const Complex& c2);
-Complex operator-(const Complex& c1, const Complex& c2);
-Complex operator*(const Complex& c1, const Complex& c2);
-Complex operator/(const Complex& c1, const Complex& c2);
-
-
 class Complex {
 
 private:
@@ -59,3 +52,10 @@ public:
 	friend istream& operator>>(istream& in, Complex& c);
 
 };
+
+// Overloaded arithmetic operators that are non-member functions that act like the arithmetic member functions.
+Complex operator+(const Complex& c1, const Complex& c2);
+Complex operator-(const Complex& c1, const Complex& c2);
+Complex operator*(const Complex& c1, const Complex& c2);
+Complex operator/(const Complex& c1, const Complex& c2);
+
