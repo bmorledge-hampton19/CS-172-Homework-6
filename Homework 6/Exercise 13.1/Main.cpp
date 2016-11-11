@@ -48,6 +48,9 @@ int main() {
 	// If everything worked out, make note of it!
 	cout << "Everything seems to have gone alright!" << endl;
 
+	// Close the fstream.
+	inout.close();
+
 	// End function.  Everything is ok!
 	return 0;
 

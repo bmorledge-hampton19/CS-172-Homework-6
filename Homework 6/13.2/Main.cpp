@@ -52,6 +52,9 @@ int main() {
 
 	}
 
+	// Close the input stream
+	input.close();
+
 
 	// End function.  Everything is ok!
 	return 0;
